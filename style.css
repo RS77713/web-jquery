@@ -197,6 +197,124 @@ h1 {
     background: radial-gradient(circle at 35% 30%, #d8fff2, #47ae9c 45%, #14596a 75%);
 }
 
+.mentor-transmissions {
+    width: min(1050px, calc(100% - 40px));
+    margin: 0 auto 22px;
+    padding: 30px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: linear-gradient(145deg, rgba(22, 31, 55, 0.9), rgba(8, 12, 26, 0.92));
+}
+
+.mentor-transmissions > h2 {
+    margin-bottom: 26px;
+}
+
+.mentor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.mentor-card {
+    min-height: 175px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.mentor-card p {
+    margin: 5px 0 0;
+    color: var(--muted);
+}
+
+.mentor-card .mentor-name {
+    margin: 0;
+    color: var(--yellow);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.mando-helmet {
+    position: relative;
+    width: 86px;
+    min-width: 86px;
+    height: 105px;
+    border: 5px solid #b6c0c9;
+    border-radius: 42px 42px 16px 16px;
+    background: linear-gradient(90deg, #4f5961, #c3ccd2 45%, #69747d);
+    box-shadow: inset 0 -18px 20px rgba(0, 0, 0, 0.42), 0 0 20px rgba(182, 192, 201, 0.18);
+}
+
+.mando-visor {
+    position: absolute;
+    top: 27px;
+    left: 10px;
+    width: 56px;
+    height: 48px;
+    border-radius: 12px 12px 4px 4px;
+    background:
+        linear-gradient(90deg, transparent 23px, #080b10 23px 33px, transparent 33px),
+        linear-gradient(#080b10 0 13px, transparent 13px);
+}
+
+.yoda-head {
+    position: relative;
+    width: 82px;
+    min-width: 82px;
+    height: 82px;
+    border-radius: 46% 46% 48% 48%;
+    background: radial-gradient(circle at 50% 35%, #b8d477, #709a4a 68%);
+    box-shadow: inset 0 -12px 18px rgba(31, 63, 28, 0.45), 0 0 24px rgba(119, 242, 180, 0.17);
+}
+
+.yoda-head::before,
+.yoda-head::after {
+    position: absolute;
+    top: 22px;
+    width: 72px;
+    height: 24px;
+    z-index: -1;
+    content: "";
+    background: #7fa44e;
+}
+
+.yoda-head::before {
+    right: 55px;
+    border-radius: 90% 10% 10% 90%;
+    transform: rotate(8deg);
+}
+
+.yoda-head::after {
+    left: 55px;
+    border-radius: 10% 90% 90% 10%;
+    transform: rotate(-8deg);
+}
+
+.yoda-eye {
+    position: absolute;
+    top: 34px;
+    width: 9px;
+    height: 6px;
+    border-radius: 50%;
+    background: #172015;
+    box-shadow: 0 0 0 3px rgba(70, 92, 44, 0.35);
+}
+
+.eye-left {
+    left: 22px;
+}
+
+.eye-right {
+    right: 22px;
+}
+
 .mission-grid {
     width: min(1050px, calc(100% - 40px));
     margin: 0 auto;
@@ -391,11 +509,17 @@ input[type="range"] {
 
 .crawl-copy {
     width: min(650px, 82%);
-    margin: 64px auto 0;
+    margin: 0 auto;
     color: var(--yellow);
     text-align: justify;
-    transform: rotateX(16deg);
+    transform: translateY(420px) rotateX(20deg) scale(1.12);
     transform-origin: 50% 100%;
+    animation: career-crawl 24s linear infinite;
+    will-change: transform, opacity;
+}
+
+.crawl-window:hover .crawl-copy {
+    animation-play-state: paused;
 }
 
 .crawl-copy h2,
@@ -418,6 +542,31 @@ input[type="range"] {
     font-size: 0.82rem !important;
     letter-spacing: 0.2em;
     text-transform: uppercase;
+}
+
+.crawl-ending {
+    margin-top: 44px;
+    text-align: center;
+}
+
+@keyframes career-crawl {
+    0% {
+        opacity: 0;
+        transform: translateY(420px) rotateX(20deg) scale(1.12);
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    84% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-760px) rotateX(25deg) scale(0.48);
+    }
 }
 
 footer {
@@ -446,6 +595,10 @@ footer {
     }
 
     .planet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mentor-grid {
         grid-template-columns: 1fr;
     }
 
@@ -479,5 +632,10 @@ footer {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+    }
+
+    .crawl-copy {
+        opacity: 1;
+        transform: translateY(40px) rotateX(8deg) scale(0.95);
     }
 }
