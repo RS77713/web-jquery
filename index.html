@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A funny jQuery career motivation and personal growth page.">
+    <title>Career Force Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars stars-one" aria-hidden="true"></div>
+    <div class="stars stars-two" aria-hidden="true"></div>
+
+    <header class="hero">
+        <p class="eyebrow">career force academy</p>
+        <h1>grow your skills.<br>launch your career.</h1>
+        <p class="intro">
+            No ancient prophecy required. Just one useful step, a little courage,
+            and possibly a suspicious amount of coffee.
+        </p>
+        <div class="ship" id="careerShip" role="button" aria-label="Launch the career rocket" title="Click to launch!">🚀</div>
+    </header>
+
+    <div class="energy-divider" aria-hidden="true">
+        <span></span>
+    </div>
+
+    <section class="galaxy-map" aria-labelledby="galaxyTitle">
+        <p class="eyebrow">choose your career system</p>
+        <h2 id="galaxyTitle">three planets of personal growth</h2>
+        <div class="planet-grid">
+            <article class="planet-card">
+                <div class="planet planet-focus" aria-hidden="true"></div>
+                <h3>Focus Prime</h3>
+                <p>Home of quiet calendars, finished tasks and phones placed face down.</p>
+            </article>
+            <article class="planet-card">
+                <div class="planet planet-skill" aria-hidden="true"></div>
+                <h3>Skilloria</h3>
+                <p>A mysterious world where tutorials are actually completed.</p>
+            </article>
+            <article class="planet-card">
+                <div class="planet planet-courage" aria-hidden="true"></div>
+                <h3>Courage Moon</h3>
+                <p>The correct destination when a job advert asks for seventeen years of experience.</p>
+            </article>
+        </div>
+    </section>
+
+    <main class="mission-grid">
+        <section class="mission-card quote-card">
+            <div class="mission-number">01</div>
+            <p class="label">motivation transmission</p>
+            <h2>Receive career wisdom</h2>
+            <blockquote id="motivationQuote">
+                “The galaxy has many jobs. Apply before your confidence invents another excuse.”
+            </blockquote>
+            <button type="button" id="quoteButton">New transmission</button>
+        </section>
+
+        <section class="mission-card">
+            <div class="mission-number">02</div>
+            <p class="label">tiny mission builder</p>
+            <h2>Add one useful goal</h2>
+            <form id="goalForm">
+                <label for="goalInput">What is your next small step?</label>
+                <div class="input-row">
+                    <input
+                        id="goalInput"
+                        type="text"
+                        maxlength="60"
+                        placeholder="Example: update my CV"
+                        required
+                    >
+                    <button type="submit">Add goal</button>
+                </div>
+            </form>
+            <ul id="goalList" aria-live="polite">
+                <li>Learn one thing that sounded scary yesterday.</li>
+            </ul>
+        </section>
+
+        <section class="mission-card meter-card">
+            <div class="mission-number">03</div>
+            <p class="label">confidence reactor</p>
+            <h2>Set today's courage level</h2>
+            <label for="confidenceRange">Move the lever, brave professional</label>
+            <input id="confidenceRange" type="range" min="5" max="100" value="35">
+            <div class="meter" aria-hidden="true">
+                <div class="meter-fill" id="meterFill"></div>
+            </div>
+            <p class="meter-message" id="meterMessage" aria-live="polite">
+                35% — nervous, but wearing professional shoes.
+            </p>
+        </section>
+
+        <section class="mission-card doubt-card">
+            <div class="mission-number">04</div>
+            <p class="label">doubt detector</p>
+            <h2>Expose the tiny villain</h2>
+            <p id="doubtMessage" class="doubt-message">
+                “Do not apply. They might discover you are still learning.”<br>
+                <strong>Reality:</strong> everyone is still learning. Some people just use nicer folders.
+            </p>
+            <button type="button" id="doubtButton">Hide the doubt</button>
+        </section>
+
+        <section class="mission-card launch-card">
+            <div class="mission-number">05</div>
+            <p class="label">career launch control</p>
+            <h2>Commit to one action</h2>
+            <p>
+                Pressing this button will not magically hire you. It will, however,
+                make a rocket move and that is already a productive afternoon.
+            </p>
+            <button type="button" id="launchButton">Launch my next step</button>
+            <p class="launch-result" id="launchResult" aria-live="polite">
+                Mission accepted! Now do the real-world part.
+            </p>
+        </section>
+    </main>
+
+    <section class="career-crawl" aria-labelledby="crawlTitle">
+        <div class="crawl-window">
+            <div class="crawl-copy">
+                <p class="crawl-chapter">episode cv</p>
+                <h2 id="crawlTitle">a new career hope</h2>
+                <p>
+                    It is a period of professional confusion. Brave applicants,
+                    working from hidden desks, have won their first victory against procrastination.
+                </p>
+                <p>
+                    Armed with one updated CV and a surprisingly acceptable profile photo,
+                    they prepare to apply, learn and grow across the career galaxy.
+                </p>
+                <p>Tomorrow is powerful. Today has the keyboard.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built with HTML, CSS, jQuery and unreasonable career optimism.</p>
+    </footer>
+
+    <script src="assets/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
